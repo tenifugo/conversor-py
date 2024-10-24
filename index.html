@@ -39,10 +39,12 @@
       <label for="site">Site da Empresa:</label>
       <input type="url" name="site" required>
     </div>
-    <div>
+    <div class="form-group">
       <label>O Cliente é membro de um ou mais Arranjo(s) Societário(s)?</label>
-      <input type="radio" name="arranjo" value="Sim" required> Sim
-      <input type="radio" name="arranjo" value="Não"> Não
+      <div class="radio-group">
+        <label><input type="radio" name="arranjo" value="Sim" required> Sim</label>
+        <label><input type="radio" name="arranjo" value="Não"> Não</label>
+      </div>
     </div>
 
     <h2>Nome Completo dos Sócios/Diretores/Administradores/Representantes Legais e/ou Empresas sócias</h2>
@@ -83,10 +85,12 @@
       </tbody>
     </table>
 
-    <div>
+    <div class="form-group">
       <label>A empresa possui departamento de Compliance?</label>
-      <input type="radio" name="compliance" value="Sim" required> Sim
-      <input type="radio" name="compliance" value="Não"> Não
+      <div class="radio-group">
+        <label><input type="radio" name="compliance" value="Sim" required> Sim</label>
+        <label><input type="radio" name="compliance" value="Não"> Não</label>
+      </div>
     </div>
     <div>
       <label for="complianceOfficer">Nome do(a) Compliance Officer:</label>
@@ -96,15 +100,19 @@
       <label for="email">E-mail:</label>
       <input type="email" name="email" required>
     </div>
-    <div>
+    <div class="form-group">
       <label>A empresa possui Código de Conduta/Ética?</label>
-      <input type="radio" name="codigoConduta" value="Sim" required> Sim
-      <input type="radio" name="codigoConduta" value="Não"> Não
+      <div class="radio-group">
+        <label><input type="radio" name="codigoConduta" value="Sim" required> Sim</label>
+        <label><input type="radio" name="codigoConduta" value="Não"> Não</label>
+      </div>
     </div>
-    <div>
+    <div class="form-group">
       <label>A empresa possui políticas e procedimentos de PLDFT?</label>
-      <input type="radio" name="pldft" value="Sim" required> Sim
-      <input type="radio" name="pldft" value="Não"> Não
+      <div class="radio-group">
+        <label><input type="radio" name="pldft" value="Sim" required> Sim</label>
+        <label><input type="radio" name="pldft" value="Não"> Não</label>
+      </div>
     </div>
 
     <button type="submit">Enviar</button>
