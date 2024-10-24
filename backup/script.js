@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       };
 
-      let valid = true; // Flag para verificar se todos os campos estão preenchidos
+      let valid = true; // Flag para verificar se todos os campos obrigatórios estão preenchidos
 
       rows.forEach((row) => {
         const nome = row.querySelector('.nomeSocio').value;
@@ -47,13 +47,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const dataNascimento = row.querySelector('.dataNascimento').value;
         const percentual = row.querySelector('.percentualSocietario').value;
 
-        // Verifica se os campos obrigatórios estão preenchidos
-        if (!nome || !cpf || !dataNascimento || !percentual) {
-          valid = false; // Se algum campo não estiver preenchido, define como inválido
+        // Adiciona sócios apenas se algum campo estiver preenchido
+        if (nome || cpf || dataNascimento || percentual) {
+          data.empresa.socios.push({ nome, cpf, dataNascimento, percentual });
         }
-
-        data.empresa.socios.push({ nome, cpf, dataNascimento, percentual });
       });
+
+      // Verifique se a empresa tem sócios
+      if (data.empresa.socios.length === 0) {
+        alert('Nenhum sócio foi adicionado. Isso está correto?');
+      }
 
       if (!valid) {
         alert('Por favor, preencha todos os campos obrigatórios dos sócios.');
