@@ -3,98 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>Formulário KYC</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="form-container">
-    <h2>Formulário KYC</h2>
-    <form id="kycForm">
-      <div class="form-group">
-        <label>Razão Social da Empresa:</label>
-        <input type="text" name="razaoSocial" placeholder="Razão Social da Empresa" required>
-      </div>
-      <div class="form-group">
-        <label>Número de Identificação Fiscal (CNPJ):</label>
-        <input type="text" name="cnpj" placeholder="Número de Identificação Fiscal (CNPJ)" required>
-      </div>
-      <div class="form-group">
-        <label>Nome Fantasia:</label>
-        <input type="text" name="nomeFantasia" placeholder="Nome Fantasia" required>
-      </div>
-      <div class="form-group">
-        <label>Data de Constituição/Abertura da Empresa:</label>
-        <input type="date" name="dataAbertura" required>
-      </div>
-      <div class="form-group">
-        <label>Atividade Principal da Empresa:</label>
-        <input type="text" name="atividadePrincipal" placeholder="Atividade Principal da Empresa" required>
-      </div>
-      <div class="form-group">
-        <label>Endereço Completo:</label>
-        <input type="text" name="endereco" placeholder="Endereço Completo" required>
-      </div>
-      <div class="form-group">
-        <label>Site da Empresa:</label>
-        <input type="url" name="site" placeholder="Site da Empresa">
-      </div>
-      <div class="form-group">
-        <label>O Cliente é membro de um ou mais Arranjo(s) Societário(s)?</label>
-        <div class="radio-group">
-          <input type="radio" name="arranjo" value="Sim"> Sim
-          <input type="radio" name="arranjo" value="Não" checked> Não
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Nome Completo dos Sócios/Diretores/Administradores/Representantes Legais e/ou Empresas sócias</label>
-        <table id="socioContainer">
-          <thead>
-            <tr>
-              <th>Nome Completo</th>
-              <th>CPF/CNPJ</th>
-              <th>Data de Nascimento/Abertura</th>
-              <th>É US Person?</th>
-              <th>Percentual Societário</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Sócios serão adicionados aqui -->
-          </tbody>
-        </table>
-        <button type="button" id="addSocio">Adicionar Sócio</button>
-      </div>
-      <div class="form-group">
-        <label>A empresa possui departamento de Compliance?</label>
-        <div class="radio-group">
-          <input type="radio" name="compliance" value="Sim"> Sim
-          <input type="radio" name="compliance" value="Não" checked> Não
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Nome do(a) Compliance Officer:</label>
-        <input type="text" name="complianceOfficer" placeholder="Nome do(a) Compliance Officer">
-      </div>
-      <div class="form-group">
-        <label>E-mail:</label>
-        <input type="email" name="email" placeholder="E-mail">
-      </div>
-      <div class="form-group">
-        <label>A empresa possui Código de Conduta/Ética?</label>
-        <div class="radio-group">
-          <input type="radio" name="codigoConduta" value="Sim"> Sim
-          <input type="radio" name="codigoConduta" value="Não" checked> Não
-        </div>
-      </div>
-      <div class="form-group">
-        <label>A empresa possui políticas e procedimentos de PLDFT?</label>
-        <div class="radio-group">
-          <input type="radio" name="pldft" value="Sim"> Sim
-          <input type="radio" name="pldft" value="Não" checked> Não
-        </div>
-      </div>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
+  <form id="kycForm">
+    <h1>Formulário KYC</h1>
+    <div>
+      <label for="razaoSocial">Razão Social da Empresa:</label>
+      <input type="text" name="razaoSocial" required>
+    </div>
+    <div>
+      <label for="cnpj">Número de Identificação Fiscal (CNPJ):</label>
+      <input type="text" name="cnpj" required>
+    </div>
+    <div>
+      <label for="nomeFantasia">Nome Fantasia:</label>
+      <input type="text" name="nomeFantasia" required>
+    </div>
+    <div>
+      <label for="dataAbertura">Data de Constituição/Abertura da Empresa:</label>
+      <input type="date" name="dataAbertura" required>
+    </div>
+    <div>
+      <label for="atividadePrincipal">Atividade Principal da Empresa:</label>
+      <input type="text" name="atividadePrincipal" required>
+    </div>
+    <div>
+      <label for="endereco">Endereço Completo:</label>
+      <input type="text" name="endereco" required>
+    </div>
+    <div>
+      <label for="site">Site da Empresa:</label>
+      <input type="url" name="site" required>
+    </div>
+    <div>
+      <label>O Cliente é membro de um ou mais Arranjo(s) Societário(s)?</label>
+      <input type="radio" name="arranjo" value="Sim" required> Sim
+      <input type="radio" name="arranjo" value="Não"> Não
+    </div>
+
+    <h2>Nome Completo dos Sócios/Diretores/Administradores/Representantes Legais e/ou Empresas sócias</h2>
+    <table id="socioContainer">
+      <thead>
+        <tr>
+          <th>Nome Completo</th>
+          <th>CPF/CNPJ</th>
+          <th>Data de Nascimento</th>
+          <th>Percentual Societário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="nomeSocio" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" placeholder="CPF/CNPJ"></td>
+          <td><input type="date" class="dataNascimento"></td>
+          <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="nomeSocio" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" placeholder="CPF/CNPJ"></td>
+          <td><input type="date" class="dataNascimento"></td>
+          <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="nomeSocio" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" placeholder="CPF/CNPJ"></td>
+          <td><input type="date" class="dataNascimento"></td>
+          <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="nomeSocio" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" placeholder="CPF/CNPJ"></td>
+          <td><input type="date" class="dataNascimento"></td>
+          <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div>
+      <label>A empresa possui departamento de Compliance?</label>
+      <input type="radio" name="compliance" value="Sim" required> Sim
+      <input type="radio" name="compliance" value="Não"> Não
+    </div>
+    <div>
+      <label for="complianceOfficer">Nome do(a) Compliance Officer:</label>
+      <input type="text" name="complianceOfficer" required>
+    </div>
+    <div>
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" required>
+    </div>
+    <div>
+      <label>A empresa possui Código de Conduta/Ética?</label>
+      <input type="radio" name="codigoConduta" value="Sim" required> Sim
+      <input type="radio" name="codigoConduta" value="Não"> Não
+    </div>
+    <div>
+      <label>A empresa possui políticas e procedimentos de PLDFT?</label>
+      <input type="radio" name="pldft" value="Sim" required> Sim
+      <input type="radio" name="pldft" value="Não"> Não
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+
   <script src="script.js"></script>
 </body>
 </html>

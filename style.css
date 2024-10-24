@@ -11,30 +11,36 @@ body {
 }
 
 /* Container do formulário */
-.form-container {
+#kycForm {
   background-color: #2c2c2c;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   width: 70%;
-  max-width: 80%;
+  max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;
 }
 
 /* Título do formulário */
-h2 {
+h1 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
   color: #ffffff;
 }
 
-/* Grupos de formulário */
+/* Títulos secundários */
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+/* Estilo dos grupos de formulário */
 .form-group {
   margin-bottom: 25px;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Estilo dos rótulos */
@@ -43,10 +49,15 @@ label {
   margin-bottom: 8px;
   font-size: 1.1em;
   color: #ffffff;
+  display: block; /* Garante que o rótulo ocupe uma linha inteira */
 }
 
 /* Estilo dos campos de texto e textarea */
-input[type="text"], input[type="date"], input[type="url"], input[type="email"], input[type="number"], textarea {
+input[type="text"],
+input[type="date"],
+input[type="url"],
+input[type="email"],
+input[type="number"] {
   padding: 12px;
   border: 1px solid #555;
   border-radius: 5px;
@@ -61,7 +72,7 @@ input[type="text"], input[type="date"], input[type="url"], input[type="email"], 
 }
 
 /* Foco nos campos de texto */
-input[type="text"]:focus, input[type="date"]:focus, input[type="url"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus {
+input:focus {
   border-color: #007bff;
 }
 
@@ -70,7 +81,6 @@ input[type="text"]:focus, input[type="date"]:focus, input[type="url"]:focus, inp
   display: flex;
   gap: 10px;
   align-items: center;
-  font-size: 1.1em;
   color: #ffffff;
 }
 
@@ -114,40 +124,19 @@ th {
   font-weight: bold;
 }
 
-.radio-group input[type="radio"] {
-  width: 20px; /* Aumenta a largura do botão de rádio */
-  height: 20px; /* Aumenta a altura do botão de rádio */
-  margin-right: 8px; /* Espaçamento à direita do botão */
-}
-
-.radio-group label {
-  font-size: 16px; /* Aumenta o tamanho da fonte do rótulo */
-  cursor: pointer; /* Muda o cursor ao passar o mouse sobre o rótulo */
-}
-
-#addSocio {
-  padding: 10px 20px; /* Aumenta o espaçamento interno do botão */
-  font-size: 16px; /* Aumenta o tamanho da fonte */
-  background-color: #d3d3d3; /* Cor cinza */
-  border: none; /* Remove a borda padrão */
-  border-radius: 5px; /* Bordas arredondadas */
-  cursor: pointer; /* Muda o cursor ao passar o mouse sobre o botão */
-  transition: background-color 0.3s; /* Animação suave de cor ao passar o mouse */
-}
-
-#addSocio:hover {
-  background-color: #a9a9a9; /* Cor cinza mais escura ao passar o mouse */
-}
-
 /* Media queries para responsividade */
 @media (max-width: 600px) {
-  .form-container {
+  #kycForm {
     width: 90%;
     padding: 20px;
   }
 
+  h1 {
+    font-size: 2em; /* Ajusta o tamanho do título principal em telas menores */
+  }
+
   h2 {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Ajusta o tamanho do título secundário em telas menores */
   }
 
   button {
