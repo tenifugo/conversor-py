@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário KYC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Formulário KYC</h2>
+    <form id="kycForm">
+      <!-- Informações da Empresa -->
+      <div class="form-group">
+        <label for="razaoSocial">Razão Social da Empresa:</label>
+        <input type="text" id="razaoSocial" name="razaoSocial" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cnpj">Número de Identificação Fiscal (CNPJ):</label>
+        <input type="text" id="cnpj" name="cnpj" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nomeFantasia">Nome Fantasia:</label>
+        <input type="text" id="nomeFantasia" name="nomeFantasia" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dataAbertura">Data de Constituição/Abertura da Empresa:</label>
+        <input type="date" id="dataAbertura" name="dataAbertura" required>
+      </div>
+
+      <div class="form-group">
+        <label for="atividadePrincipal">Atividade Principal da Empresa:</label>
+        <input type="text" id="atividadePrincipal" name="atividadePrincipal" required>
+      </div>
+
+      <div class="form-group">
+        <label for="endereco">Endereço Completo:</label>
+        <input type="text" id="endereco" name="endereco" required>
+      </div>
+
+      <div class="form-group">
+        <label for="siteEmpresa">Site da Empresa:</label>
+        <input type="url" id="siteEmpresa" name="siteEmpresa">
+      </div>
+
+      <!-- Arranjos Societários -->
+      <div class="form-group">
+        <label>O Cliente é membro de um ou mais Arranjo(s) Societário(s)?</label>
+        <div class="radio-group">
+          <input type="radio" id="arranjoSim" name="arranjo" value="Sim"> Sim
+          <input type="radio" id="arranjoNao" name="arranjo" value="Não" checked> Não
+        </div>
+      </div>
+
+      <div class="form-group" id="arranjoDetails" style="display:none;">
+        <label for="listaArranjos">Por favor, liste:</label>
+        <textarea id="listaArranjos" name="listaArranjos"></textarea>
+      </div>
+
+      <!-- Sócios/Diretores/Administradores -->
+      <h3><strong>Nome Completo dos: Sócios/Diretores/Administradores/Representantes Legais e/ou Empresas sócias</strong></h3>
+      <table id="socioTable">
+        <thead>
+          <tr>
+            <th><strong>Nome Completo</strong></th>
+            <th><strong>CPF/CNPJ</strong></th>
+            <th><strong>Data de Nascimento/Abertura</strong></th>
+            <th><strong>É US Person?</strong></th>
+            <th><strong>% Societário</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" class="nomeSocio" name="nomeSocio[]"></td>
+            <td><input type="text" class="cpfSocio" name="cpfSocio[]"></td>
+            <td><input type="date" class="dataNascimento" name="dataNascimento[]"></td>
+            <td>
+              <div class="radio-group">
+                <input type="radio" name="usPerson1" value="Não" checked> Não
+                <input type="radio" name="usPerson1" value="Sim"> Sim
+              </div>
+            </td>
+            <td><input type="number" class="percentualSocietario" name="percentualSocietario[]" step="0.01" max="100"></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="nomeSocio" name="nomeSocio[]"></td>
+            <td><input type="text" class="cpfSocio" name="cpfSocio[]"></td>
+            <td><input type="date" class="dataNascimento" name="dataNascimento[]"></td>
+            <td>
+              <div class="radio-group">
+                <input type="radio" name="usPerson2" value="Não" checked> Não
+                <input type="radio" name="usPerson2" value="Sim"> Sim
+              </div>
+            </td>
+            <td><input type="number" class="percentualSocietario" name="percentualSocietario[]" step="0.01" max="100"></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="nomeSocio" name="nomeSocio[]"></td>
+            <td><input type="text" class="cpfSocio" name="cpfSocio[]"></td>
+            <td><input type="date" class="dataNascimento" name="dataNascimento[]"></td>
+            <td>
+              <div class="radio-group">
+                <input type="radio" name="usPerson3" value="Não" checked> Não
+                <input type="radio" name="usPerson3" value="Sim"> Sim
+              </div>
+            </td>
+            <td><input type="number" class="percentualSocietario" name="percentualSocietario[]" step="0.01" max="100"></td>
+          </tr>
+          <tr>
+            <td><input type="text" class="nomeSocio" name="nomeSocio[]"></td>
+            <td><input type="text" class="cpfSocio" name="cpfSocio[]"></td>
+            <td><input type="date" class="dataNascimento" name="dataNascimento[]"></td>
+            <td>
+              <div class="radio-group">
+                <input type="radio" name="usPerson4" value="Não" checked> Não
+                <input type="radio" name="usPerson4" value="Sim"> Sim
+              </div>
+            </td>
+            <td><input type="number" class="percentualSocietario" name="percentualSocietario[]" step="0.01" max="100"></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <!-- Departamento de Compliance -->
+      <h3>Compliance</h3>
+      <div class="form-group">
+        <label>A empresa possui departamento de Compliance?</label>
+        <div class="radio-group">
+          <input type="radio" id="complianceSim" name="compliance" value="Sim"> Sim
+          <input type="radio" id="complianceNao" name="compliance" value="Não" checked> Não
+        </div>
+      </div>
+
+      <div class="form-group" id="complianceDetails" style="display:none;">
+        <label for="complianceOfficer">Nome do Compliance Officer:</label>
+        <input type="text" id="complianceOfficer" name="complianceOfficer">
+
+        <label for="complianceEmail">Email:</label>
+        <input type="email" id="complianceEmail" name="complianceEmail">
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
