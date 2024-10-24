@@ -1,6 +1,6 @@
 /* Centraliza o formulário como no Google Forms */
 body {
-  font-family: 'Arial', sans-serif; 
+  font-family: 'Calibri', sans-serif; /* Define Calibri como a fonte padrão */ 
   background: linear-gradient(180deg, #1a1a1a, #333333);
   height: 100vh;
   margin: 0;
@@ -25,7 +25,7 @@ body {
 /* Título do formulário */
 h1 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3em; /* Aumentado */
   margin-bottom: 20px;
   color: #ffffff;
 }
@@ -33,7 +33,7 @@ h1 {
 /* Títulos secundários */
 h2 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em; /* Aumentado */
   margin: 20px 0;
   color: #ffffff;
 }
@@ -47,7 +47,7 @@ h2 {
 label {
   font-weight: bold;
   margin-bottom: 8px;
-  font-size: 1.1em;
+  font-size: 1.3em; /* Aumentado */
   color: #ffffff;
   display: block; /* Garante que o rótulo ocupe uma linha inteira */
 }
@@ -61,7 +61,7 @@ input[type="number"] {
   padding: 12px;
   border: 1px solid #555;
   border-radius: 5px;
-  font-size: 1.1em;
+  font-size: 1.2em; /* Aumentado */
   width: 100%;
   box-sizing: border-box;
   background-color: #444444;
@@ -94,7 +94,7 @@ button[type="submit"] {
   cursor: pointer;
   border-radius: 5px;
   width: 100%;
-  font-size: 1.2em;
+  font-size: 1.4em; /* Aumentado */
   transition: background-color 0.3s, transform 0.2s;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -132,14 +132,22 @@ th {
   }
 
   h1 {
-    font-size: 2em; /* Ajusta o tamanho do título principal em telas menores */
+    font-size: 2.5em; /* Ajusta o tamanho do título principal em telas menores */
   }
 
   h2 {
-    font-size: 1.5em; /* Ajusta o tamanho do título secundário em telas menores */
+    font-size: 2em; /* Ajusta o tamanho do título secundário em telas menores */
   }
 
   button {
-    font-size: 1em;
+    font-size: 1.2em; /* Ajustado */
   }
+}
+
+/* Estilo para a descrição */
+.descricao {
+  font-size: 1em; /* Aumentado */
+  color: #ffffff; /* Certifique-se de que a cor seja legível */
+  margin-bottom: 20px; /* Adiciona um espaço abaixo da descrição */
+  text-align: left; /* Alinha o texto à esquerda */
 }
