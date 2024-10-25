@@ -9,7 +9,9 @@
 </head>
 
 <body>
-  <form id="kycForm">
+  <form id="kycForm" action="https://api.staticforms.xyz/submit" method="POST" novalidate>
+    <input type="hidden" name="accessKey" value="e44fc5d0-0b52-4cb1-9f79-fefc3800d89c"> <!-- Required -->
+
     <h1>Formulário KYC</h1>
     <h2 class="descricao">PEP = Pessoas Expostas Politicamente são, basicamente, agentes públicos que desempenham ou tenham desempenhado, nos últimos cinco anos, cargos ou funções públicas relevantes, assim como seus representantes, familiares e pessoas de seu relacionamento próximo.
 
@@ -18,37 +20,37 @@
 
     <div>
       <label for="razaoSocial">Razão Social da Empresa:</label>
-      <input type="text" name="razaoSocial" required>
+      <input type="text" name="$razaoSocial" required>
     </div>
     <div>
       <label for="cnpj">Número de Identificação Fiscal (CNPJ):</label>
-      <input type="text" name="cnpj" required>
+      <input type="text" name="$cnpj" required>
     </div>
     <div>
       <label for="nomeFantasia">Nome Fantasia:</label>
-      <input type="text" name="nomeFantasia" required>
+      <input type="text" name="$nomeFantasia" required>
     </div>
     <div>
       <label for="dataAbertura">Data de Constituição/Abertura da Empresa:</label>
-      <input type="date" name="dataAbertura" required>
+      <input type="date" name="$dataAbertura" required>
     </div>
     <div>
       <label for="atividadePrincipal">Atividade Principal da Empresa:</label>
-      <input type="text" name="atividadePrincipal" required>
+      <input type="text" name="$atividadePrincipal" required>
     </div>
     <div>
       <label for="endereco">Endereço Completo:</label>
-      <input type="text" name="endereco" required>
+      <input type="text" name="$endereco" required>
     </div>
     <div>
       <label for="site">Site da Empresa:</label>
-      <input type="url" name="site" required>
+      <input type="url" name="$site" required>
     </div>
 
     <div class="radio-group">
       <label>O Cliente é membro de um ou mais Arranjo(s) Societário(s)?</label><br>
-      <label><input type="radio" name="arranjo" value="Sim" required> Sim</label>
-      <label><input type="radio" name="arranjo" value="Não"> Não</label>
+      <label><input type="radio" name="$arranjo" value="Sim" required> Sim</label>
+      <label><input type="radio" name="$arranjo" value="Não"> Não</label>
     </div>
 
     <h2>Nome Completo dos Sócios/Diretores/Administradores/Representantes Legais e/ou Empresas sócias</h2>
@@ -63,56 +65,38 @@
       </thead>
       <tbody>
         <tr>
-          <td><input type="text" class="nomeSocio" placeholder="Nome completo"></td>
-          <td><input type="text" class="cpfSocio" placeholder="CPF/CNPJ"></td>
-          <td><input type="date" class="dataNascimento"></td>
-          <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
+          <td><input type="text" class="nomeSocio" name="$nomeSocio1" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" name="$cpfSocio1" placeholder="CPF/CNPJ"></td>
+          <td><input type="date" class="dataNascimento" name="$dataNascimento1"></td>
+          <td><input type="number" class="percentualSocietario" name="$percentualSocietario1" step="0.01" max="100" placeholder="% Societário"></td>
         </tr>
-        <tr>
-          <td><input type="text" class="nomeSocio" placeholder="Nome completo"></td>
-          <td><input type="text" class="cpfSocio" placeholder="CPF/CNPJ"></td>
-          <td><input type="date" class="dataNascimento"></td>
-          <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
-        </tr>
-        <tr>
-          <td><input type="text" class="nomeSocio" placeholder="Nome completo"></td>
-          <td><input type="text" class="cpfSocio" placeholder="CPF/CNPJ"></td>
-          <td><input type="date" class="dataNascimento"></td>
-          <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
-        </tr>
-        <tr>
-          <td><input type="text" class="nomeSocio" placeholder="Nome completo"></td>
-          <td><input type="text" class="cpfSocio" placeholder="CPF/CNPJ"></td>
-          <td><input type="date" class="dataNascimento"></td>
-          <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
-        </tr>
-        <!-- Repetir conforme necessário -->
+        <!-- Adicione mais linhas conforme necessário, mudando o índice (ex: nomeSocio2, cpfSocio2, etc.) -->
       </tbody>
     </table>
 
     <div class="radio-group">
       <label>A empresa possui departamento de Compliance?</label><br>
-      <label><input type="radio" name="compliance" value="Sim" required> Sim</label>
-      <label><input type="radio" name="compliance" value="Não"> Não</label>
+      <label><input type="radio" name="$compliance" value="Sim" required> Sim</label>
+      <label><input type="radio" name="$compliance" value="Não"> Não</label>
     </div>
 
     <div>
       <label for="complianceOfficer">Nome do(a) Compliance Officer:</label>
-      <input type="text" name="complianceOfficer" required>
+      <input type="text" name="$complianceOfficer" required>
     </div>
     <div>
       <label for="email">E-mail:</label>
-      <input type="email" name="email" required>
+      <input type="email" name="$email" required>
     </div>
     <div class="radio-group">
       <label>A empresa possui Código de Conduta/Ética?</label><br>
-      <label><input type="radio" name="codigoConduta" value="Sim" required> Sim</label>
-      <label><input type="radio" name="codigoConduta" value="Não"> Não</label>
+      <label><input type="radio" name="$codigoConduta" value="Sim" required> Sim</label>
+      <label><input type="radio" name="$codigoConduta" value="Não"> Não</label>
     </div>
     <div class="radio-group">
       <label>A empresa possui políticas e procedimentos de PLDFT?</label><br>
-      <label><input type="radio" name="pldft" value="Sim" required> Sim</label>
-      <label><input type="radio" name="pldft" value="Não"> Não</label>
+      <label><input type="radio" name="$pldft" value="Sim" required> Sim</label>
+      <label><input type="radio" name="$pldft" value="Não"> Não</label>
     </div>
 
     <button type="submit">Enviar</button>
