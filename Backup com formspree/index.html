@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário KYC</title>
+  <style>
+    /* Centraliza o formulário como no Google Forms */
+    body {
+      font-family: 'Calibri', sans-serif;
+      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Container do formulário */
+    #kycForm {
+      background-color: #1e1e1e;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      width: 70%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    /* Títulos do formulário */
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin: 20px 0;
+      color: #ffffff;
+    }
+
+    /* Estilo dos rótulos */
+    label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 1.3em;
+      color: #ffffff;
+      display: block;
+    }
+
+    /* Estilo dos campos de texto */
+    input[type="text"],
+    input[type="url"],
+    input[type="email"],
+    input[type="number"] {
+      padding: 12px;
+      border: 1px solid #555;
+      border-radius: 5px;
+      font-size: 1.2em;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #444444;
+      color: #ffffff;
+      transition: border-color 0.3s;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    /* Foco nos campos de texto */
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    /* Estilo dos grupos de radio */
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    /* Botão de enviar */
+    button[type="submit"] {
+      margin-top: 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 1.4em;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Botões ao passar o mouse */
+    button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* Media queries para responsividade */
+    @media (max-width: 600px) {
+      #kycForm {
+        width: 90%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      button {
+        font-size: 1.2em;
+      }
+    }
+
+    /* Estilo para a descrição */
+    .descricao {
+      font-size: 1em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="kycForm" action="https://formspree.io/f/mzzbzwga" method="POST" novalidate>
+    <h1>Formulário KYC</h1>
+    <h2 class="descricao">PEP = Pessoas Expostas Politicamente são, basicamente, agentes públicos que desempenham ou tenham desempenhado, nos últimos cinco anos, cargos ou funções públicas relevantes, assim como seus representantes, familiares e pessoas de seu relacionamento próximo.</h2>
+
+    <div>
+      <label for="razaoSocial">Razão Social da Empresa:</label>
+      <input type="text" name="razao_social" required>
+    </div>
+    <div>
+      <label for="cnpj">Número de Identificação Fiscal (CNPJ):</label>
+      <input type="text" name="cnpj" required>
+    </div>
+    <div>
+      <label for="nomeFantasia">Nome Fantasia:</label>
+      <input type="text" name="nome_fantasia" required>
+    </div>
+    <div>
+      <label for="dataAbertura">Data de Constituição/Abertura da Empresa:</label>
+      <input type="text" name="data_abertura" placeholder="dd/mm/aaaa" required>
+    </div>
+    <div>
+      <label for="atividadePrincipal">Atividade Principal da Empresa:</label>
+      <input type="text" name="atividade_principal" required>
+    </div>
+    <div>
+      <label for="endereco">Endereço Completo:</label>
+      <input type="text" name="endereco" required>
+    </div>
+    <div>
+      <label for="site">Site da Empresa:</label>
+      <input type="url" name="site" required>
+    </div>
+
+    <div class="radio-group">
+      <label>O Cliente é membro de um ou mais Arranjo(s) Societário(s)?</label><br>
+      <label><input type="radio" name="arranjo" value="Sim" required> Sim</label>
+      <label><input type="radio" name="arranjo" value="Não"> Não</label>
+    </div>
+
+    <h2>Nome Completo dos Sócios/Diretores/Administradores/Representantes Legais e/ou Empresas sócias</h2>
+    <table id="socioContainer">
+      <thead>
+        <tr>
+          <th>Nome Completo</th>
+          <th>CPF/CNPJ</th>
+          <th>Data de Nascimento</th>
+          <th>Percentual Societário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="nomeSocio" name="nome_socio1" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" name="cpf_socio1" placeholder="CPF/CNPJ"></td>
+          <td><input type="text" class="dataNascimento" name="data_nascimento1" placeholder="dd/mm/aaaa"></td>
+          <td><input type="number" class="percentualSocietario" name="percentual_societario1" step="0.01" max="100" placeholder="% Societário"></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="nomeSocio" name="nome_socio2" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" name="cpf_socio2" placeholder="CPF/CNPJ"></td>
+          <td><input type="text" class="dataNascimento" name="data_nascimento2" placeholder="dd/mm/aaaa"></td>
+          <td><input type="number" class="percentualSocietario" name="percentual_societario2" step="0.01" max="100" placeholder="% Societário"></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="nomeSocio" name="nome_socio3" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" name="cpf_socio3" placeholder="CPF/CNPJ"></td>
+          <td><input type="text" class="dataNascimento" name="data_nascimento3" placeholder="dd/mm/aaaa"></td>
+          <td><input type="number" class="percentualSocietario" name="percentual_societario3" step="0.01" max="100" placeholder="% Societário"></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="nomeSocio" name="nome_socio4" placeholder="Nome completo"></td>
+          <td><input type="text" class="cpfSocio" name="cpf_socio4" placeholder="CPF/CNPJ"></td>
+          <td><input type="text" class="dataNascimento" name="data_nascimento4" placeholder="dd/mm/aaaa"></td>
+          <td><input type="number" class="percentualSocietario" name="percentual_societario4" step="0.01" max="100" placeholder="% Societário"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="radio-group">
+      <label>A empresa possui departamento de Compliance?</label><br>
+      <label><input type="radio" name="compliance" value="Sim" required> Sim</label>
+      <label><input type="radio" name="compliance" value="Não"> Não</label>
+    </div>
+
+    <div>
+      <label for="complianceOfficer">Nome do(a) Compliance Officer:</label>
+      <input type="text" name="compliance_officer" required>
+    </div>
+    <div>
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="radio-group">
+      <label>A empresa possui Código de Conduta/Ética?</label><br>
+      <label><input type="radio" name="codigo_conduta" value="Sim" required> Sim</label>
+      <label><input type="radio" name="codigo_conduta" value="Não"> Não</label>
+    </div>
+    <div class="radio-group">
+      <label>A empresa possui políticas e procedimentos de PLDFT?</label><br>
+      <label><input type="radio" name="pldft" value="Sim" required> Sim</label>
+      <label><input type="radio" name="pldft" value="Não"> Não</label>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+
+</html>
