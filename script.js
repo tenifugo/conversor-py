@@ -79,12 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Formulário enviado com sucesso!');
             document.getElementById('kycForm').reset(); // Limpa o formulário
           } else {
-            alert('Erro ao enviar o formulário.');
+            return response.json().then((err) => {
+              throw new Error(err.message || 'Erro ao enviar o formulário.');
+            });
           }
         })
         .catch((error) => {
           console.error('Erro:', error);
-          alert('Ocorreu um erro ao enviar o formulário.');
+          alert('Ocorreu um erro ao enviar o formulário: ' + error.message);
         });
     });
 });
