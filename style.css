@@ -20,6 +20,7 @@ body {
   max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;
+  margin: 20px 0;
 }
 
 /* Título do formulário */
@@ -146,6 +147,7 @@ th {
   }
 }
 
+<<<<<<< HEAD
 /* Estilo para a descrição */
 .descricao {
   font-size: 1em; 
@@ -153,3 +155,33 @@ th {
   margin-bottom: 20px; 
   text-align: left; 
 }
+=======
+/* Estilo dos grupos de radio */
+.radio-group {
+  display: flex;
+  gap: 20px; /* Aumenta o espaço entre os botões */
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Estilo para os botões de rádio */
+.radio-group label {
+  padding: 10px 15px; /* Espaçamento interno */
+  border: 1px solid #555; /* Borda */
+  border-radius: 5px; /* Arredondar cantos */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+/* Efeito ao passar o mouse */
+.radio-group label:hover {
+  background-color: #007bff; /* Cor de fundo ao passar o mouse */
+  color: white; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo para o estado selecionado */
+.radio-group input[type="radio"]:checked + label {
+  background-color: #28a745; /* Cor de fundo quando selecionado */
+  color: white; /* Cor do texto quando selecionado */
+}
+>>>>>>> a61a49030edb4054573043736785b48e701ca2e3
