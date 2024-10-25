@@ -9,12 +9,13 @@
 </head>
 
 <body>
-  <form id="kycForm">
+  <form id="kycForm" action="https://staticforms.xyz/form" method="POST">
     <h1>Formulário KYC</h1>
     <h2 class="descricao">PEP = Pessoas Expostas Politicamente são, basicamente, agentes públicos que desempenham ou tenham desempenhado, nos últimos cinco anos, cargos ou funções públicas relevantes, assim como seus representantes, familiares e pessoas de seu relacionamento próximo.
 
       O Cliente declara, para todos os fins de Direito, que as informações abaixo prestadas são verídicas, comprometendo-se a informar o 3X Pay, imediatamente, sobre quaisquer alterações ou novas condições relevantes para fins de Compliance. Por fim, tem ciência de que novas informações ou documentos poderão ser solicitados a qualquer momento.
     </h2>
+
     <div>
       <label for="razaoSocial">Razão Social da Empresa:</label>
       <input type="text" name="razaoSocial" required>
@@ -43,10 +44,11 @@
       <label for="site">Site da Empresa:</label>
       <input type="url" name="site" required>
     </div>
-    <div>
-      <label>O Cliente é membro de um ou mais Arranjo(s) Societário(s)?</label>
-      <input type="radio" name="arranjo" value="Sim" required> Sim
-      <input type="radio" name="arranjo" value="Não"> Não
+
+    <div class="radio-group">
+      <label>O Cliente é membro de um ou mais Arranjo(s) Societário(s)?</label><br>
+      <label><input type="radio" name="arranjo" value="Sim" required> Sim</label>
+      <label><input type="radio" name="arranjo" value="Não"> Não</label>
     </div>
 
     <h2>Nome Completo dos Sócios/Diretores/Administradores/Representantes Legais e/ou Empresas sócias</h2>
@@ -84,14 +86,16 @@
           <td><input type="date" class="dataNascimento"></td>
           <td><input type="number" class="percentualSocietario" step="0.01" max="100" placeholder="% Societário"></td>
         </tr>
+        <!-- Repetir conforme necessário -->
       </tbody>
     </table>
 
-    <div>
-      <label>A empresa possui departamento de Compliance?</label>
-      <input type="radio" name="compliance" value="Sim" required> Sim
-      <input type="radio" name="compliance" value="Não"> Não
+    <div class="radio-group">
+      <label>A empresa possui departamento de Compliance?</label><br>
+      <label><input type="radio" name="compliance" value="Sim" required> Sim</label>
+      <label><input type="radio" name="compliance" value="Não"> Não</label>
     </div>
+
     <div>
       <label for="complianceOfficer">Nome do(a) Compliance Officer:</label>
       <input type="text" name="complianceOfficer" required>
@@ -100,15 +104,15 @@
       <label for="email">E-mail:</label>
       <input type="email" name="email" required>
     </div>
-    <div>
-      <label>A empresa possui Código de Conduta/Ética?</label>
-      <input type="radio" name="codigoConduta" value="Sim" required> Sim
-      <input type="radio" name="codigoConduta" value="Não"> Não
+    <div class="radio-group">
+      <label>A empresa possui Código de Conduta/Ética?</label><br>
+      <label><input type="radio" name="codigoConduta" value="Sim" required> Sim</label>
+      <label><input type="radio" name="codigoConduta" value="Não"> Não</label>
     </div>
-    <div>
-      <label>A empresa possui políticas e procedimentos de PLDFT?</label>
-      <input type="radio" name="pldft" value="Sim" required> Sim
-      <input type="radio" name="pldft" value="Não"> Não
+    <div class="radio-group">
+      <label>A empresa possui políticas e procedimentos de PLDFT?</label><br>
+      <label><input type="radio" name="pldft" value="Sim" required> Sim</label>
+      <label><input type="radio" name="pldft" value="Não"> Não</label>
     </div>
 
     <button type="submit">Enviar</button>
